@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    
+    <nav>
+        <!-- <a href="#">Logout</a> -->
+    </nav>
+    
+    <section class="page-heading">
+        <h2>Register</h2>
+    </section>
+    
+    <section class="form">
+        <!-- <h2>Register</h2> -->
+        {% block content %}
+        <form action="signup" method="post" >
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="category" class="form-control" required value="" placeholder="Category">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="company_name" class="form-control" required value="" placeholder="Company Name">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="Location" class="form-control" required value="" placeholder="Location">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="admin_name" class="form-control" required value="" placeholder="Admin Name">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" required value="" placeholder="Username">
+                <span class="invalid-feedback"></span>
+            </div>    
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" value="" required placeholder="Password">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" name="confirm_password" class="form-control" value="" placeholder="Confirm Password" required>
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="primary-button" id="form-button" value="Register">
+            </div>
+            <p style="text-align: center; margin-top: -3%;">Already Registered? <a href="{% url 'login' %}">Login Here</a></p>
+        </form>
+        {% endblock %}
+    </section>
+    <footer>
+        Designed & Developed by Group 10
+    </footer>   
+</body>
+</html>

@@ -1,0 +1,133 @@
+head
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+table
+{
+    align-self: center;
+    border: 1px black solid;
+    margin: 5% 15% 2% 15%;
+    background-color: #dddddd;
+}
+
+tr
+{
+    border-bottom: 1px black solid;
+}
+
+tr:hover
+{
+    background-color: #aaaaaa;
+}
+
+th
+{
+    background-color: #aaaaaa;
+}
+
+th, td
+{
+    /* border: 1px black solid; */
+    width: 2%;
+    text-align: center;
+    padding: 1% 2% 1% 2%;
+}
+
+tr :nth-child(2)
+{
+    text-align: left;
+    width: 5%;
+}
+
+button
+{
+    display: block;
+    margin: 2% auto 5% auto;
+    width: 20%;
+    padding: 1%;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+button:hover
+{
+    background-color: #aaaaaa;
+}
+
+#myModal
+{
+    z-index: 1;
+    background-color: rgba(71, 78, 93, 0.7);
+}
+
+#myModal h1, p
+{
+    text-align: center;
+}
+
+.modal-content
+{
+    width: 80%;
+    margin: 10% 10% auto 10%;
+    padding: 2%;
+}
+
+.close
+{
+    margin-left: 100%;
+    margin-top: -3%;
+    font-size: xx-large;
+    cursor: pointer;
+    background-color: #dddddd;
+}
+
+.close:hover
+{
+    background-color: #aaaaaa;
+}
+
+#modal-button
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.modal-content button
+{
+    cursor: pointer;
+    width: 100%;
+}
+
+#modal-button-cancel, #modal-button-confirm
+{
+    float: left;
+    width: 50%;
+    border-radius: 0%;
+    border: none;
+    background-color: #aaaaaa;
+}
+
+#modal-button-cancel
+{
+    margin-right: 1%;
+}
+
+#modal-button-confirm
+{
+    background-color: #04AA6D;
+}
+
+.checkbox
+{
+    width: 25px;
+    height: 25px;
+}
