@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +25,9 @@
     <div class="form">
       {% block content %}
 
-        <form action="signin" method="post">
+        <form action="" method="post">
           {% csrf_token %}
+          {{ form }}
             <div class="form-group">
                 <!-- <label>Username</label> -->
                 <input type="text" name="username" class="form-control" value="" placeholder="Username" required>
