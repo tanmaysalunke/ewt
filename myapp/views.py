@@ -2,7 +2,7 @@ from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
-from .forms import LoginForm
+from .forms import LoginForm, RegisterForm
 from .models import UIDS
 #from django.views.generic import CreateView
 #from .models import user
@@ -13,8 +13,9 @@ def login(request):
     return render(request, 'login.html', {'form': form})
     
 
-def register(request):  
-    return render(request, 'register.html')
+def register(request):
+    form = RegisterForm()
+    return render(request, 'register.html', {'form': form})
 
 # def user(request):
 #     form = CustomerForm()
