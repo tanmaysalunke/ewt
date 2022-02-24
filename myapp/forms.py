@@ -10,11 +10,21 @@ CATEGORY = (
     ('RC', 'Recycler')
 )
 
+# To add a password validator/matcher(which will check if passwords entered are same or not), 
+# you can add the below methods in your RegisterForm() in forms.py-
+
+# Method 1-
+#     def clean_password2(self):
+#         password1 = self.cleaned_data.get("password1")
+#         password2 = self.cleaned_data.get("password2")
+#         if password1 != password2:
+#             raise forms.ValidationError("Your Password does not match")
+
 class LoginForm(forms.Form):
     
     # email = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    password = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Password'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
 
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
@@ -29,8 +39,8 @@ class RegisterForm(forms.Form):
     location = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Location'}))
     admin_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'F_name L_name'}))
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    password = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Password'}))
-    cnf_password = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Confirm Password'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+    cnf_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
 
     def __init__(self, *args, **kwargs):
         super(RegisterForm, self).__init__(*args, **kwargs)

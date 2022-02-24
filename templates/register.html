@@ -25,34 +25,6 @@
         <form action="signup" method="post" >
             {% csrf_token %}
             {{ form|crispy }}
-            <!-- <div class="form-group">
-                <input type="text" name="category" class="form-control" required value="" placeholder="Category">
-                <span class="invalid-feedback"></span>
-            </div>
-            <div class="form-group">
-                <input type="text" name="company_name" class="form-control" required value="" placeholder="Company Name">
-                <span class="invalid-feedback"></span>
-            </div>
-            <div class="form-group">
-                <input type="text" name="Location" class="form-control" required value="" placeholder="Location">
-                <span class="invalid-feedback"></span>
-            </div>
-            <div class="form-group">
-                <input type="text" name="admin_name" class="form-control" required value="" placeholder="Admin Name">
-                <span class="invalid-feedback"></span>
-            </div>
-            <div class="form-group">
-                <input type="text" name="username" class="form-control" required value="" placeholder="Username">
-                <span class="invalid-feedback"></span>
-            </div>    
-            <div class="form-group">
-                <input type="password" name="password" class="form-control" value="" required placeholder="Password">
-                <span class="invalid-feedback"></span>
-            </div>
-            <div class="form-group">
-                <input type="password" name="confirm_password" class="form-control" value="" placeholder="Confirm Password" required>
-                <span class="invalid-feedback"></span>
-            </div> -->
             <div class="form-group">
                 <input type="submit" class="primary-button" id="form-button" value="Register">
             </div>
