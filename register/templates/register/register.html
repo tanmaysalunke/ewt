@@ -1,4 +1,4 @@
-{% extends 'myapp/base.html' %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block title %} Register {% endblock %}
     {% block content %}
@@ -13,8 +13,8 @@
             {% csrf_token %}
             {{ form|crispy }}
             <div class="form-group">
-                <input type="submit" class="primary-button" id="form-button" value="Register">
+                <button type="submit" class="primary-button" id="form-button">Register</button>
             </div>
-            <p style="text-align: center; margin-bottom: 5%;">Already Registered? <a href="{% url 'logins' %}">Login Here</a></p>
+            <p style="text-align: center; margin-bottom: 5%; margin-top: -3%; ">Already Registered? <a href="{% url 'login' %}">Login Here</a></p>
         </form>
     {% endblock %}

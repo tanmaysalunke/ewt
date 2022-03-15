@@ -10,7 +10,7 @@ from .forms import LoginForm, RegisterForm
 # Create your views here.
 def login(request):
     form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'login1.html', {'form': form})
     
 
 def register(request):

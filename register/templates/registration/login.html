@@ -1,4 +1,4 @@
-{% extends 'myapp/base.html' %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block title %} Login {% endblock %}
     {% block content %}
@@ -15,6 +15,6 @@
             <div class="form-group">
                 <input type="submit" class="primary-button" id="form-button" value="Login">
             </div>
-            <p style="text-align: center; margin-top: -3%;">New User? <a href="{% url 'register' %}">Register Here</a></p>
+            <p style="text-align: center; margin-top: -3%;">New User? <a href="{% url 'register1' %}">Register Here</a></p>
         </form>
     {% endblock %}
