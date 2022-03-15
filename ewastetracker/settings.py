@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'crispy_forms',
     'django.contrib.sites',
+    'myapp.apps.MyappConfig',
 ]
 
 SITE_ID = 1
@@ -142,3 +143,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# LOGIN_REDIRECT_URL = "/user/register"
