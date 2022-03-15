@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.sites',
     'myapp.apps.MyappConfig',
+    'register.apps.RegisterConfig',
 ]
 
 SITE_ID = 1
