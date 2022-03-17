@@ -53,13 +53,13 @@ class RegisterForm(UserCreationForm):
 
 
 
-class UserLoginForm(AuthenticationForm):
-    def __init__(self, *args, **kwargs):
-        super(UserLoginForm, self).__init__(*args, **kwargs)
-        self.fields['username'].label = ''
-        self.fields['password'].label = ''
+# class UserLoginForm(AuthenticationForm):
+#     def __init__(self, *args, **kwargs):
+#         super(UserLoginForm, self).__init__(*args, **kwargs)
+#         self.fields['username'].label = ''
+#         self.fields['password'].label = ''
 
-    username = UsernameField(widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholder': 'Username', 'id': 'username'}))
-    password = forms.CharField(widget=forms.PasswordInput(
-        attrs={'class': 'form-control', 'placeholder': 'Password', 'id': 'password'}))
+#     username = UsernameField(widget=forms.TextInput(
+#         attrs={'class': 'form-control', 'placeholder': 'Username', 'id': 'username'}))
+#     password = forms.CharField(widget=forms.PasswordInput(
+#         attrs={'class': 'form-control', 'placeholder': 'Password', 'id': 'password'}))

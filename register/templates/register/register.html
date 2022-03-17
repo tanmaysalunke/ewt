@@ -11,7 +11,64 @@
 
         <form action="" method="post" >
             {% csrf_token %}
-            {{ form|crispy }}
+            <!-- {{ form|crispy }} -->
+            <div class="form-group">
+                <!-- <label>Admin Name</label> -->
+                <input type="text" id="first_name" name="first_name" class="form-control" value="" required placeholder="First Name">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <!-- <label>Admin Name</label> -->
+                <input type="text" id="last_name" name="last_name" class="form-control" value="" required placeholder="Last Name">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <!-- <label>Admin Name</label> -->
+                <input type="email" name="email" class="form-control" value="" required placeholder="Email ID">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <!-- <label for="category">Category</label> -->
+                <!-- <input list="category" name="category" placeholder="Select a Category" class="form-control"> -->
+                    <select required class="form-control">
+                        <option value="" id="">Category</option>
+                        <option value="Manufacturer" id="MF">Manufacturer</option>
+                        <option value="Recycler" id="RC">Recycler</option>
+                        <option value="Refurbisher" id="RF">Refurbisher</option>
+                    </select>                
+            </div>
+            <div class="form-group">
+                <!-- <label>Company Name</label> -->
+                <input type="text" name="company_name" class="form-control" value="" required placeholder="Company Name">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <!-- <label>Location</label> -->
+                <input type="text" name="Location" class="form-control" value="" required placeholder="Location">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <!-- <label>Username</label> -->
+                <input type="text" id="username" name="username" class="form-control" value="" required placeholder="Username">
+                <span class="invalid-feedback"></span>
+            </div>    
+            <div class="form-group">
+                <!-- <label>Password</label> -->
+                <input type="password" id="password1" name="password1" class="form-control" value="" required placeholder="Password">
+                <span class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <!-- <label>Confirm Password</label> -->
+                <input type="password" name="confirm_password" class="form-control" value="" placeholder="Confirm Password" required>
+                <span class="invalid-feedback"></span>
+            </div>
+            {% if messages %}
+                <ul class="messages list-unstyled">
+                    {% for message in messages %}
+                    {% if message.tags %} <li class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
             <div class="form-group">
                 <button type="submit" class="primary-button" id="form-button">Register</button>
             </div>
