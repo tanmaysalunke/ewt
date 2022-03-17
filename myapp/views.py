@@ -8,14 +8,14 @@ from .forms import LoginForm, RegisterForm
 #from .models import user
 
 # Create your views here.
-def login(request):
-    form = LoginForm()
-    return render(request, 'login1.html', {'form': form})
+# def login(request):
+#     form = LoginForm()
+#     return render(request, 'login1.html', {'form': form})
     
 
-def register(request):
-    form = RegisterForm()
-    return render(request, 'register.html', {'form': form})
+# def register(request):
+#     form = RegisterForm()
+#     return render(request, 'register.html', {'form': form})
 
 # def user(request):
 #     form = CustomerForm()
@@ -23,9 +23,9 @@ def register(request):
     #fields = ('category', 'company_name', 'location', 'admin_name', 'username', 'password', 'cnf_password')
     
 
-def add(request):
-    val1= int(request.POST["num1"])
-    val2= int(request.POST["num2"])
-    sum= val1+ val2
+# def add(request):
+#     val1= int(request.POST["num1"])
+#     val2= int(request.POST["num2"])
+#     sum= val1+ val2
 
-    return render(request, "result.html", {'result': sum})
+#     return render(request, "result.html", {'result': sum})
