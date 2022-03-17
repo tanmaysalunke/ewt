@@ -51,15 +51,3 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ["first_name", "last_name", "email", "category", "company_name", "location", "username", "password1", "password2"]
 
-
-
-# class UserLoginForm(AuthenticationForm):
-#     def __init__(self, *args, **kwargs):
-#         super(UserLoginForm, self).__init__(*args, **kwargs)
-#         self.fields['username'].label = ''
-#         self.fields['password'].label = ''
-
-#     username = UsernameField(widget=forms.TextInput(
-#         attrs={'class': 'form-control', 'placeholder': 'Username', 'id': 'username'}))
-#     password = forms.CharField(widget=forms.PasswordInput(
-#         attrs={'class': 'form-control', 'placeholder': 'Password', 'id': 'password'}))

@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from register import views as v
 from django.contrib.auth import views
-from register.forms import UserLoginForm
 
 urlpatterns = [
     path('user/', include('myapp.urls')),
