@@ -14,35 +14,16 @@ import time
 from django.http import HttpResponse
 
 # Create your views here.
-def register1(response):
-    if response.method == "POST":
-        form = RegisterForm(response.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/login')
-    else:
-        form = RegisterForm()
+# def register1(response):
+#     if response.method == "POST":
+#         form = RegisterForm(response.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('/login')
+#     else:
+#         form = RegisterForm()
 
-    return render(response, 'register/register.html', {'form': form})
-
-# REGISTRATION
-@login_required(login_url='login')
-def registerPage(request):
-    if request.method == 'POST':
-        user_reg = User.objects.create_user(first_name=request.POST.get('first_name'),
-                        password=request.POST.get('password1'),
-                        username=request.POST.get('username'))
-        try:
-            user_reg.save()
-            groups = Group.objects.get(name=request.POST.get('access_level'))
-            groups.user_set.add(user_reg)
-            request.session['regname'] = request.POST.get('first_name')
-            # context = {'folder_name': request.POST.get('first_name')}
-            return render(request, "registration/login.html")
-        except IntegrityError:
-            messages.info(request, "Username already present!")
-    return render(request, 'register/register.html')
-
+#     return render(response, 'register/register.html', {'form': form})
 
 
 # LOGIN
@@ -55,7 +36,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('register1')
+            return redirect('register')
         else:
             messages.info(request, 'Username or Password is incorrect')
     return render(request, 'registration/login.html')
@@ -68,6 +49,29 @@ def logoutUser(request):
     return redirect('login')
 
 
+# REGISTRATION
+# @login_required(login_url='login')
+def registerPage(request):
+    if request.method == 'POST':
+        user_reg = User.objects.create_user(first_name=request.POST.get('first_name'),
+                        last_name=request.POST.get('last_name'),
+                        password=request.POST.get('password1'),
+                        # password2=request.POST.get('password2'),
+                        email=request.POST.get('email'),
+                        username=request.POST.get('username'),
+                        location=request.POST.get('location'),
+                        company_name=request.POST.get('company_name'),
+                        )
+        try:
+            user_reg.save()
+            groups = Group.objects.get(name=request.POST.get('access_level'))
+            groups.user_set.add(user_reg)
+            # request.session['regname'] = request.POST.get('first_name')
+            # context = {'folder_name': request.POST.get('first_name')}
+            return render(request, "registration/login.html")
+        except IntegrityError:
+            messages.info(request, "Username already present!")
+    return render(request, 'register/register.html')
 # # TABLE DATA
 # @login_required(login_url='login')
 # def table_data(request):

@@ -9,7 +9,7 @@
     <div class="form">
 
 
-        <form action="" method="post" class="form-group">
+        <form method="post" class="form-group">
             {% csrf_token %}
             <div class="form-group">
                 <input type="text" name="username" class="form-control" value="" placeholder="Username" required>
@@ -29,6 +29,6 @@
             <div class="form-group">
                 <input type="submit" class="primary-button" id="form-button" value="Login">
             </div>
-            <p style="text-align: center; margin-top: -3%;">New User? <a href="{% url 'register1' %}">Register Here</a></p>
+            <p style="text-align: center; margin-top: -3%;">New User? <a href="{% url 'register' %}">Register Here</a></p>
         </form>
     {% endblock %}

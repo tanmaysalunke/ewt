@@ -9,7 +9,7 @@
     <section class="form">
         
 
-        <form action="" method="post" >
+        <form id="registration" method="post" >
             {% csrf_token %}
             <!-- {{ form|crispy }} -->
             <div class="form-group">
@@ -24,13 +24,13 @@
             </div>
             <div class="form-group">
                 <!-- <label>Admin Name</label> -->
-                <input type="email" name="email" class="form-control" value="" required placeholder="Email ID">
+                <input type="email" id="email" name="email" class="form-control" value="" required placeholder="Email ID">
                 <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
                 <!-- <label for="category">Category</label> -->
                 <!-- <input list="category" name="category" placeholder="Select a Category" class="form-control"> -->
-                    <select required class="form-control">
+                    <select required class="form-control" id="access_level" form="registration" name="access_level">
                         <option value="" id="">Category</option>
                         <option value="Manufacturer" id="MF">Manufacturer</option>
                         <option value="Recycler" id="RC">Recycler</option>
@@ -39,12 +39,12 @@
             </div>
             <div class="form-group">
                 <!-- <label>Company Name</label> -->
-                <input type="text" name="company_name" class="form-control" value="" required placeholder="Company Name">
+                <input type="text" id="company_name" name="company_name" class="form-control" value="" required placeholder="Company Name">
                 <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
                 <!-- <label>Location</label> -->
-                <input type="text" name="Location" class="form-control" value="" required placeholder="Location">
+                <input type="text" id="location" name="location" class="form-control" value="" required placeholder="Location">
                 <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
@@ -59,7 +59,7 @@
             </div>
             <div class="form-group">
                 <!-- <label>Confirm Password</label> -->
-                <input type="password" name="confirm_password" class="form-control" value="" placeholder="Confirm Password" required>
+                <input type="password" id="password2" name="password2" class="form-control" value="" placeholder="Confirm Password" required>
                 <span class="invalid-feedback"></span>
             </div>
             {% if messages %}

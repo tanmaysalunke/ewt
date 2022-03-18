@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
     path('login/', v.loginPage, name='login'),
-    path('register/', v.register1, name='register1'),
+    path('logout/', v.logoutUser, name='logout'),
+    path('register/', v.registerPage, name='register'),
 ]
